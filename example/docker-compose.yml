@@ -1,0 +1,25 @@
+services:
+  fruit-api-server:
+    # command: sh -c 'echo "wait mysql..." && /usr/src/app/wait-for.sh mysql-fruit:3306 -t 36000 -- ./start.sh'
+    command: sh -c 'echo "wait mysql..." && sleep 20 && python ./main.py && echo "mysql up!"'
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    container_name: fruit-api
+    depends_on:
+    - mysql-fruit-server
+    environment:
+    - FLASK_ENV=example
+    ports:
+    - 8080:8080
+  mysql-fruit-server:
+    container_name: mysql-fruit
+    environment:
+    - MYSQL_ROOT_PASSWORD=1234
+    - MYSQL_DATABASE=fruit
+    volumes:
+    - ./:/docker-entrypoint-initdb.d
+    image: mysql:5.7.22
+    ports:
+      - 3309:3306
+version: "3"
