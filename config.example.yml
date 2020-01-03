@@ -1,0 +1,8 @@
+mysql:
+  host: 192.168.40.43  # you local ip: cmd => ipconfig
+  port: 3309
+  user: root
+  passwd: 1234
+  dbName: fruit
+serviceName: python-api
+httpport: 8080

@@ -1,0 +1,8 @@
+mysql:
+  host: 10.173.208.142
+  port: 3307
+  user: fruit
+  passwd: 1234
+  dbName: fruit
+serviceName: python-api
+httpport: 8080
