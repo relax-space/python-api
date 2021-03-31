@@ -8,4 +8,4 @@ pandas==0.25.3
 beautifulsoup4==4.8.2
 PyYAML==5.2
 PyMySQL==0.9.3
-lxml==4.4.2
+lxml==4.6.3
